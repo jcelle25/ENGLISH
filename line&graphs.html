@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 3 - Parts of a Letter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <div>
+        <h1>Lecture 3: Parts of a Letter</h1>
+        <p class="subtitle">ENG 2 – Technical Writing</p>
+      </div>
+      <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="lecture3.html">⬅ Prev</a>
+      </nav>
+    </header>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 20px;
+      color: #1e293b;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #1e3a8a;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.2em;
+    }
+
+    .section-card {
+      background: #f1f5f9;
+      border-left: 5px solid #3b82f6;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .section-card h3 {
+      color: #1e40af;
+      margin-bottom: 10px;
+    }
+
+    .section-card p {
+      margin: 6px 0;
+    }
+
+    canvas {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 10px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lines & Graphs in Technical Writing</h1>
+
+  <!-- Definition -->
+  <div class="section-card">
+    <h3>Definition</h3>
+    <p>Lines and graphs are visual tools used to present data clearly and concisely. They make information easier to understand and compare.</p>
+  </div>
+
+  <!-- Line Graph -->
+  <div class="section-card">
+    <h3>Line Graph</h3>
+    <p>Shows trends or changes over time.</p>
+    <canvas id="lineChart"></canvas>
+  </div>
+
+  <!-- Bar Graph -->
+  <div class="section-card">
+    <h3>Bar Graph</h3>
+    <p>Used to compare quantities across categories.</p>
+    <canvas id="barChart"></canvas>
+  </div>
+
+  <!-- Pie Chart -->
+  <div class="section-card">
+    <h3>Pie Chart</h3>
+    <p>Used to show proportions of a whole.</p>
+    <canvas id="pieChart"></canvas>
+  </div>
+
+  <!-- Tips -->
+  <div class="section-card">
+    <h3>Tips for Using Graphs</h3>
+    <ul>
+      <li>Always label axes and units clearly.</li>
+      <li>Use consistent colors for clarity.</li>
+      <li>Include a descriptive title for each graph.</li>
+      <li>Keep graphs simple and easy to read.</li>
+    </ul>
+  </div>
+
+  <script>
+    // Line Graph
+    const ctxLine = document.getElementById('lineChart').getContext('2d');
+    const lineChart = new Chart(ctxLine, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Monthly Rainfall (mm)',
+          data: [78, 85, 92, 110, 95, 120],
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59, 130, 246, 0.2)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true },
+          title: { display: true, text: 'Rainfall Trend' }
+        }
+      }
+    });
+
+    // Bar Graph
+    const ctxBar = document.getElementById('barChart').getContext('2d');
+    const barChart = new Chart(ctxBar, {
+      type: 'bar',
+      data: {
+        labels: ['Barangay 1', 'Barangay 2', 'Barangay 3', 'Barangay 4'],
+        datasets: [{
+          label: 'Number of Vaccinated Children',
+          data: [120, 150, 90, 200],
+          backgroundColor: ['#3b82f6','#60a5fa','#93c5fd','#bfdbfe'],
+          borderColor: '#1e40af',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Vaccinations by Barangay' }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    // Pie Chart
+    const ctxPie = document.getElementById('pieChart').getContext('2d');
+    const pieChart = new Chart(ctxPie, {
+      type: 'pie',
+      data: {
+        labels: ['Vaccine A', 'Vaccine B', 'Vaccine C'],
+        datasets: [{
+          label: 'Vaccine Distribution',
+          data: [40, 35, 25],
+          backgroundColor: ['#3b82f6','#60a5fa','#93c5fd']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'right' },
+          title: { display: true, text: 'Vaccine Type Distribution' }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

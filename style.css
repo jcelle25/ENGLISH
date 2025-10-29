@@ -1,0 +1,421 @@
+/* ===== Root Variables ===== */
+:root {
+  --bg1: #fffbe9;          /* soft pastel yellow */
+  --bg2: #e0f7ff;          /* soft pastel blue */
+  --accent: #8ecae6;       /* main pastel blue */
+  --accent-hover: #6aa6d6; 
+  --card: #ffffff;        
+  --text: #2b2b2b;        
+  --muted: #5f5f5f;
+  --btn: #ffd166;          /* pastel yellow button */
+  --btn-hover: #ffca3a;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== General Layout ===== */
+body {
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  background-attachment: fixed;
+}
+
+.site {
+  width: 100%;
+  max-width: 1050px;
+}
+
+/* ===== Header ===== */
+/* ===== Header ===== */
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 35px;
+  background: var(--btn); /* full yellow navbar background */
+  padding: 18px 24px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  color: #2b2b2b;
+}
+
+.subtitle {
+  color: #444;
+  font-size: 13px;
+}
+
+nav {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+/* === Navigation Links === */
+nav a {
+  text-decoration: none;
+  color: #2b2b2b; /* dark text */
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* hover effect only */
+nav a:hover {
+  background: rgba(255, 255, 255, 0.6); /* white-ish hover bubble */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* active tab look — subtle */
+nav a.active {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.logo {
+  width: 70px;
+  height: 70px;
+  background: var(--btn);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  color: var(--accent-hover);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+nav {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+nav a.active {
+  background: var(--btn);
+  box-shadow: var(--shadow);
+  color: #000;
+}
+
+/* ===== Sections ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 35px;
+}
+
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Buttons ===== */
+.big-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.big-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Quick Links ===== */
+.quick-links a {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  background: #fff8e6;
+  border: 1px solid #f3e2a9;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+.quick-links a:hover {
+  background: var(--btn);
+  color: #000;
+}
+
+/* ===== Lectures ===== */
+.lectures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.lecture {
+  background: #e3f2fd;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  border: 1px solid #dceefc;
+  transition: 0.3s;
+}
+
+.lecture:hover {
+  transform: translateY(-5px);
+  background: #d9effb;
+}
+
+.lecture h4 {
+  margin-top: 0;
+  color: var(--accent-hover);
+}
+
+/* ===== Lecture Page Design ===== */
+section.card h2 {
+  color: var(--accent-hover);
+  border-left: 6px solid var(--btn);
+  padding-left: 10px;
+}
+
+.lecture h3 {
+  color: var(--accent-hover);
+  margin-bottom: 6px;
+}
+
+.lecture p {
+  background: #fdfbf3;
+  border-left: 4px solid var(--btn);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.lecture pre {
+  background: #fff8e6;
+  border-left: 6px solid var(--accent);
+  border-radius: 10px;
+  padding: 15px;
+  font-family: "Courier New", monospace;
+  overflow-x: auto;
+}
+
+/* ===== Contact ===== */
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(142, 202, 230, 0.2);
+}
+
+form button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: var(--accent-hover);
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 12px;
+  background: #ffffffb0;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+/* ===== EXPRESSIVE A–Z LECTURE DESIGN ===== */
+
+.lecture h3 {
+  position: relative;
+  background: linear-gradient(90deg, var(--btn) 0%, var(--accent) 100%);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-top: 25px;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow);
+}
+
+.lecture h3::before {
+  content: "✏️";
+  position: absolute;
+  left: -34px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+/* Pastel bubble for each paragraph under a letter */
+.lecture p {
+  background: #ffffffb5;
+  border-left: 5px solid var(--accent);
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-top: 8px;
+  line-height: 1.6;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Example text formatting */
+.lecture em {
+  display: block;
+  margin-top: 6px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Add light gradient accent to the section */
+section.card {
+  background: linear-gradient(180deg, #fffdf7 0%, #f7faff 100%);
+}
+
+/* Bullet list style (if any inside lecture) */
+.lecture ul {
+  list-style: none;
+  padding-left: 15px;
+  margin: 8px 0 0 0;
+}
+
+.lecture ul li {
+  margin: 5px 0;
+  padding-left: 22px;
+  position: relative;
+}
+
+.lecture ul li::before {
+  content: "🌼";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Soft fade-in effect */
+.lecture h3, .lecture p {
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover pop for headers */
+.lecture h3:hover {
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav {
+    margin-left: 0;
+  }
+}
